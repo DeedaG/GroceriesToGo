@@ -14,8 +14,7 @@ namespace GroceriesToGo.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    TemperatureC = table.Column<int>(type: "INTEGER", nullable: false),
-                    Summary = table.Column<string>(type: "TEXT", nullable: true)
+                    catName = table.Column<string>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

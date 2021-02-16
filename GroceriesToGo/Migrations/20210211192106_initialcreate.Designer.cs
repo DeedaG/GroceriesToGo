@@ -26,11 +26,8 @@ namespace GroceriesToGo.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Summary")
+                    b.Property<string>("catName")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("TemperatureC")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

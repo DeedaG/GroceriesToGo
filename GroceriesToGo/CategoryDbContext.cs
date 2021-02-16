@@ -1,10 +1,17 @@
-﻿using System;
-namespace GroceriesToGo
+﻿using GroceriesToGo;
+using Microsoft.EntityFrameworkCore;
+
+public class CategoryDbContext : DbContext
 {
-    public class CategoryDbContext
+    public CategoryDbContext(DbContextOptions<CategoryDbContext> options)
+        : base(options)
     {
-        public CategoryDbContext()
-        {
-        }
+    }
+
+    public DbSet<Category> Category { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        //modelBuilder.Seed();
     }
 }

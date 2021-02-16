@@ -17,18 +17,15 @@ namespace GroceriesToGo.Migrations
 
             modelBuilder.Entity("GroceriesToGo.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Id") 
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Summary")
+                    b.Property<string>("catName")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("TemperatureC")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
