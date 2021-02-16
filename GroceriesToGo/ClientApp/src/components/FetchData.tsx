@@ -51,7 +51,6 @@ class FetchData extends React.PureComponent<CategoryProps> {
         <tbody>
           {this.props.cats.map((cat: CategorysStore.Category) =>
               <tr key={cat.date}>
-                  {console.log(this.props)}
                   <td>{cat.date}</td>
                   <td>{cat.catName}</td>
             </tr>

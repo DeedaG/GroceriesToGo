@@ -109,7 +109,7 @@ editCat: (data: Category, history: History): AppThunkAction<editCatAction> => (d
               body: JSON.stringify(data)
             }).then(response => response.json() as Promise<Category>)
               .then(data => {
-                console.log("data", data)
+                console.log("data", data);
             });
             dispatch({ type: 'EDIT_CAT', payload: {id: data.id, date: data.date, catName: data.catName} });
             history.push(`/api/Category/${data.id}`);
@@ -119,15 +119,14 @@ editCat: (data: Category, history: History): AppThunkAction<editCatAction> => (d
     deleteCat: (id: number, history: History): AppThunkAction<deleteCatAction> => (dispatch, getState) => {
         const appState = getState();
         if (appState) {
-            fetch(`http://localhost:3000/api/v1/Category/${id}`, {
+            fetch(`https://localhost:5001/api/Category/${id}`, {
               credentials: "include",
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json"
-              }
+              } 
             }).then(response => response.json() as Promise<number>)
               .then(id => {
-                console.log("id", id)
             });
             dispatch({ type: 'DELETE_CAT', payload: id});
             history.push(`/api/Category`);
@@ -149,7 +148,6 @@ export const reducer: Reducer<CategoryState> = (state: CategoryState | undefined
     }
 
     const action = incomingAction as KnownAction;
-    console.log("state", state);
     switch (action.type) {
         case 'GET_CAT':
             return {
@@ -174,7 +172,6 @@ export const reducer: Reducer<CategoryState> = (state: CategoryState | undefined
             };
 
         case 'EDIT_CAT':
-debugger
             return {
                 ...state,
                 cats: state.cats.map(

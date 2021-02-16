@@ -46,7 +46,6 @@ export const actionCreators = {
             fetch(`https://localhost:5001/api/Category`)
                 .then(response => response.json() as Promise<Category[]>)
                 .then(data => {
-    console.log("data", data);
                     dispatch({ type: 'RECEIVE_cats', startDateIndex: startDateIndex, cats: data });
                 });
 

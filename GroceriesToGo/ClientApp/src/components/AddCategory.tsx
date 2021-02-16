@@ -46,7 +46,7 @@ class AddCategory extends React.PureComponent<CategoryProps, myState> {
             };
 
             this.props.addCat(newcat, this.props.history);
-
+debugger
         } else if (this.state.catName && this.state.date && this.state.id) {
             const updatedDetails = {
                 id: this.state.id,
@@ -70,7 +70,7 @@ class AddCategory extends React.PureComponent<CategoryProps, myState> {
         })
     }
 
-    deletecat = (id: number) => {
+    deleteCat = (id: number) => {
         this.clearData();
         if (window.confirm("Are you sure?")) {
             this.props.deleteCat(id, this.props.history);
@@ -124,7 +124,7 @@ class AddCategory extends React.PureComponent<CategoryProps, myState> {
                                         <td>{(index + 1)}</td>
                                         <td>{c.catName}</td>
                                         <td>{c.date}</td>
-                                        <td><button onClick={() => this.editDetails(c)}>EDIT</button> <button onClick={() => this.deletecat(c.id)}>DELETE</button> </td>
+                                        <td><button onClick={() => this.editDetails(c)}>EDIT</button> <button onClick={() => this.deleteCat(c.id)}>DELETE</button> </td>
                                     </tr>
                                 })) : null }
                             </tbody>
